@@ -1,7 +1,8 @@
 import { Flow } from '@vaadin/flow-frontend';
 import { Commands, Context, Route } from '@vaadin/router';
 import './views/main/main-view';
-import {isLoggedIn} from "Frontend/views/login/auth";
+import './views/cardlist/card-list-view';
+import {isLoggedIn} from "Frontend/auth";
 
 const { serverSideRoutes } = new Flow({
   imports: () => import('../target/frontend/generated-flow-imports'),
@@ -15,14 +16,12 @@ export const views: ViewRoute[] = [
     component: 'login-view',
     title: 'Login',
     action: async () => {
-      await import('./views/login/login-view');
+      await import('./login-view');
     },
   },
   // for client-side, place routes below (more info https://vaadin.com/docs/v19/flow/typescript/creating-routes.html)
   {
     path: 'card-list',
-    component: 'card-list-view',
-    title: 'Card List',
     // action: async () => {
     //   await import('./views/cardlist/card-list-view');
     // },
@@ -32,6 +31,8 @@ export const views: ViewRoute[] = [
       }
       return undefined;
     },
+    component: 'card-list-view',
+    title: 'Card List',
   },
   {
     path: 'master-detail',

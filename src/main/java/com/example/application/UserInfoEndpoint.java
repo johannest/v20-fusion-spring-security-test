@@ -1,4 +1,4 @@
-package com.vaadin.demo.fusion.security;
+package com.example.application;
 
 import com.vaadin.flow.server.connect.Endpoint;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.vaadin.demo.fusion.security;
+package com.example.application;
 
 import java.util.stream.Stream;
 

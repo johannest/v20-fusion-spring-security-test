@@ -1,7 +1,7 @@
 // Uses the Vaadin provided login an logout helper methods
 import { login as loginImpl, LoginResult, logout as logoutImpl } from '@vaadin/flow-frontend';
 import { UserInfoEndpoint } from 'Frontend/generated/UserInfoEndpoint';
-import UserInfo from 'Frontend/generated/com/vaadin/demo/fusion/security/UserInfo';
+import UserInfo from 'Frontend/generated/com/example/application/UserInfo';
 
 interface Authentication {
   user: UserInfo;

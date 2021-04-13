@@ -1,4 +1,4 @@
-package com.vaadin.demo.fusion.security;
+package com.example.application;
 
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
