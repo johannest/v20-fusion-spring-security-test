@@ -19,3 +19,6 @@ error-screenshots/
 webpack.generated.js
 /.vscode/
 /_cacache/
+/.npmrc
+/_update-notifier-last-checked
+/anonymous-cli-metrics.json
