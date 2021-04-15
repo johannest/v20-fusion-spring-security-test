@@ -10,7 +10,7 @@
 
     <properties>
         <java.version>11</java.version>
-        <vaadin.version>20.0.0.alpha7</vaadin.version>
+        <vaadin.version>20.0-SNAPSHOT</vaadin.version>
     </properties>
 
     <parent>
@@ -172,7 +172,7 @@
             <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
-                <version>${vaadin.version}</version>
+                <version>20.0.0.alpha7</version>
                 <executions>
                     <execution>
                         <goals>
@@ -193,7 +193,7 @@
                     <plugin>
                         <groupId>com.vaadin</groupId>
                         <artifactId>vaadin-maven-plugin</artifactId>
-                        <version>${vaadin.version}</version>
+                        <version>20.0.0.alpha7</version>
                         <executions>
                             <execution>
                                 <goals>
