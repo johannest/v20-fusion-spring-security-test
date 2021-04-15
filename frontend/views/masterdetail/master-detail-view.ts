@@ -13,7 +13,6 @@ import '@vaadin/vaadin-ordered-layout/vaadin-horizontal-layout';
 import '@vaadin/vaadin-split-layout';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-upload';
-import { logout } from '../../auth';
 import SamplePerson from 'Frontend/generated/com/example/application/data/entity/SamplePerson';
 import SamplePersonModel from 'Frontend/generated/com/example/application/data/entity/SamplePersonModel';
 import * as SamplePersonEndpoint from 'Frontend/generated/SamplePersonEndpoint';
@@ -34,7 +33,7 @@ export class MasterDetailView extends View {
 
   render() {
     return html`
-      <vaadin-button @click="${this.logout}">Logout</vaadin-button>
+      <a href="/logout">Log out</a>
       <vaadin-split-layout class="full-size">
         <div class="grid-wrapper">
           <vaadin-grid
@@ -108,10 +107,6 @@ export class MasterDetailView extends View {
         </div>
       </vaadin-split-layout>
     `;
-  }
-
-  async logout() {
-    await logout();
   }
 
   private async getGridData(params: GridDataProviderParams, callback: GridDataProviderCallback) {

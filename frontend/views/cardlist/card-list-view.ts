@@ -1,4 +1,3 @@
-import { logout } from 'Frontend/../target/flow-frontend/Authentication';
 import { customElement, html, property } from 'lit-element';
 import { View } from '../../views/view';
 import * as helloEndpoint from 'Frontend/generated/HelloEndpoint';
@@ -9,14 +8,11 @@ export class CardListView extends View {
 
   render() {
     return html`
-      <vaadin-button @click="${this.logout}">Logout</vaadin-button>
+      <a href="/logout">Log out</a>
       <div>${this.stringVal}</div>
     `;
   }
 
-  async logout() {
-    await logout();
-  }
 
   async connectedCallback() {
     super.connectedCallback();

@@ -2,8 +2,8 @@ import { Flow } from '@vaadin/flow-frontend';
 import { Commands, Context, Route } from '@vaadin/router';
 import './views/main/main-view';
 import './views/cardlist/card-list-view';
-import {isLoggedIn} from "Frontend/auth";
-
+import {isLoggedIn, logout} from "Frontend/auth";
+import './login-view';
 const { serverSideRoutes } = new Flow({
   imports: () => import('../target/frontend/generated-flow-imports'),
 });
@@ -13,11 +13,15 @@ export type ViewRoute = Route & { title?: string; children?: ViewRoute[] };
 export const views: ViewRoute[] = [
   {
     path: '/login',
-    component: 'login-view',
-    title: 'Login',
-    action: async () => {
-      await import('./login-view');
-    },
+    component: 'login-view'
+  },
+  {
+    path: '/logout',
+    action: async (_: Context, commands: Commands) => {
+      // use the logout helper method.
+      await logout();
+      return commands.redirect('/');
+    }
   },
   // for client-side, place routes below (more info https://vaadin.com/docs/v19/flow/typescript/creating-routes.html)
   {

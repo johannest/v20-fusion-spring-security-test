@@ -14,11 +14,10 @@ public class SecurityConfig extends VaadinWebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/about").permitAll();
-
         super.configure(http);
 
         // use a form based login
-        http.formLogin();
+        http.formLogin().loginPage("/login").permitAll();;
     }
 
 
